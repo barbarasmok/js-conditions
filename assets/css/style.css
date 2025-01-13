@@ -31,19 +31,20 @@ a {
 a:hover {
   color: #474747;
 }
-.container {
-  display: flex;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'navbar'
+    'filtro'
+    'main'
+    'footer';
+  gap: 0;
   width: 100vw;
   text-align: center;
   padding: 1rem 2rem;
   vertical-align: middle;
   height: 100vh;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1em;
 }
 .btn-back {
   border-radius: 100px;
@@ -71,44 +72,53 @@ a:hover {
 .disclaimer p {
   margin-bottom: 0;
 }
-/* Pintar */
-#ele1 {
+/* Borde */
+img {
   width: 300px;
-  height: 300px;
-  display: flex;
+  height: auto;
   cursor: pointer;
-  border: solid 2px red;
+  border: none; /* Sin borde inicial */
   border-radius: 1rem;
-  /* background-color: #75c9bc; */
+}
+.bordeRed {
+  border: 2px solid red;
+}
+.imgContainer {
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
-/* boxes */
-.boxes-grid,
-.keys-grid {
+
+/* Stickers */
+.card img {
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  border: none; /* Sin borde inicial */
+  border-radius: 100%;
+}
+.cards {
   display: flex;
   gap: 1.3rem;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-content: center;
   justify-content: space-evenly;
   align-items: center;
   margin: 2rem auto;
-  flex-wrap: wrap;
-  color: white;
 }
-#box-1,
-#box-2,
-#box-3,
-#box-4,
-.color-box {
+.card {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 200px;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
   border: none;
   border-radius: 1.5rem;
   justify-content: center;
@@ -117,34 +127,143 @@ a:hover {
   align-content: center;
   padding: 1rem 2rem 2rem 2rem;
 }
-#box-1 {
-  background-color: blue;
+.btn-dark {
+  border-radius: 100px;
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(45, 118, 235);
+  border: none;
+  font-size: 1.2rem;
 }
-#box-2 {
-  background-color: red;
+.btn-dark:hover {
+  background-color: #75c9bc;
+  font-weight: 500;
 }
-#box-3 {
-  background-color: green;
+.alerta-too-many {
+  color: red;
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
-#box-4 {
-  background-color: yellow;
+.alerta-ok {
+  color: green;
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
-.color-box {
-  background-color: white;
-  border: solid 2px black;
+.resultado {
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+input {
+  width: 50px;
+}
+/* Password */
+.correct1 {
+  color: green;
+  margin-top: 2rem;
+}
+.correct2 {
+  color: blue;
+  margin-top: 2rem;
+}
+.incorrect {
+  color: red;
+  margin-top: 2rem;
+}
+.formContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+.selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.form-select {
+  border-radius: 0.65rem;
+  border: solid rgb(46 118 235) 0.15rem;
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  color: #2d2d2e;
 }
 
+/*Fin de Juego*/
+.sticker-bg {
+  background-image: url('../imgs/sticker-bg.png');
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+.content .disclaimer {
+  margin-top: 1rem !important;
+}
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .container {
-    gap: 2em;
+  .cards {
+    display: flex;
+    gap: 1.3rem;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .card img {
+    width: 250px;
+    height: 250px;
+  }
+  img {
+    width: 350px;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .container {
-    gap: 2em;
+  .grid-container {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .card img {
+    width: 300px;
+    height: 300px;
+  }
+  img {
+    width: 350px;
   }
 }
 
