@@ -1,0 +1,153 @@
+* html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif !important;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+a {
+  color: #060606;
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover {
+  color: #474747;
+}
+.container {
+  display: flex;
+  width: 100vw;
+  text-align: center;
+  padding: 1rem 2rem;
+  vertical-align: middle;
+  height: 100vh;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.btn-back {
+  border-radius: 100px;
+  padding: 0.25rem 1rem;
+  background-color: #75c9bc;
+  border: none;
+  font-size: 0.75rem;
+  color: white;
+}
+.btn-back:hover {
+  background-color: #d8646c;
+  font-weight: 500;
+  color: white;
+}
+.disclaimer {
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.disclaimer p {
+  margin-bottom: 0;
+}
+/* Pintar */
+#ele1 {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  cursor: pointer;
+  border: solid 2px red;
+  border-radius: 1rem;
+  /* background-color: #75c9bc; */
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+/* boxes */
+.boxes-grid,
+.keys-grid {
+  display: flex;
+  gap: 1.3rem;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+  color: white;
+}
+#box-1,
+#box-2,
+#box-3,
+#box-4,
+.color-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  border: none;
+  border-radius: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 1rem 2rem 2rem 2rem;
+}
+#box-1 {
+  background-color: blue;
+}
+#box-2 {
+  background-color: red;
+}
+#box-3 {
+  background-color: green;
+}
+#box-4 {
+  background-color: yellow;
+}
+.color-box {
+  background-color: white;
+  border: solid 2px black;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    gap: 2em;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    gap: 2em;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) {
+}
